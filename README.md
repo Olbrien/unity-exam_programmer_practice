@@ -7,8 +7,9 @@ Half the questions are from oficial sources and the other half are from the book
 
 I've made this app as close as possible to the [Measure Up](https://www.measureup.com) exam format.
 
-It works on all phone dimensions.
-Questions are random.
-You can choose to do mock tests, specific topics, with timer, and real exam scenario.
+It works on all phone dimensions.\
+Questions are random.\
+You can choose to do mock tests, specific topics, with or without timer and real exam scenario.\
+It also saves your best exam, your worst and your latest.
 
-
+You can test this app on any Android device. You can find the .apk at the folder [Extras/](https://github.com/Olbrien/unity-exam_programmer_practice/tree/main/Extras).

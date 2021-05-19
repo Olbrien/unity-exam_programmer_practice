@@ -16,7 +16,7 @@ It also saves your best exam, your worst and your latest.
 You can test this app on any Android device. You can find the .apk at the folder [Extras](https://github.com/Olbrien/unity-exam_programmer_practice/tree/main/Extras).
 
 
-<img src="/Extras/Pictures/1.png" width="360" height="749"/><img src="/Extras/Pictures/2.png" width="360" height="749"/>\
-<img src="/Extras/Pictures/3.png" width="360" height="749"/><img src="/Extras/Pictures/4.png" width="360" height="749"/>\
-<img src="/Extras/Pictures/5.png" width="360" height="749"/><img src="/Extras/Pictures/6.png" width="360" height="749"/>\
+<img src="/Extras/Pictures/1.png" width="360" height="749"/> <img src="/Extras/Pictures/2.png" width="360" height="749"/>\
+<img src="/Extras/Pictures/3.png" width="360" height="749"/> <img src="/Extras/Pictures/4.png" width="360" height="749"/>\
+<img src="/Extras/Pictures/5.png" width="360" height="749"/> <img src="/Extras/Pictures/6.png" width="360" height="749"/>\
 <img src="/Extras/Pictures/7.png" width="360" height="749"/>

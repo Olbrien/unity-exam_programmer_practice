@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 8
+  m_EditorClassIdentifier: 
+  question: 'You have been assigned a task from your technical lead to store the
+    800
+
+    non-player character (NPC) prefabs. Either one of these prefabs can
+    be
+
+    picked and dropped into the game to roam around. This system needs to
+    be
+
+    user-friendly for our designers and ideally, all selections of NPC should
+
+    come
+    from the Inspector window. There is also a chance the number of
+
+    enemies
+    will increase from the original 800.
+
+
+    How will you prepare to issue these
+    NPCs?'
+  wrongAnswer1: 'Simply create a script to store a public array that will accommodate
+    the
+
+    creation of each prefab.'
+  wrongAnswer2: 'Make a class containing a private serialize field list of NPC prefabs
+    and
+
+    have each class of the NPC create an instance of an NPC at runtime.'
+  wrongAnswer3: Create all 800+ NPCs at runtime and store them out of the camera
+    view.
+  correctAnswer: "Create a Scriptable Object containing an array of referenced prefabs.\r"
+  showAnswer: Explanation not provided for this entire Practice Test.

@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 17
+  m_EditorClassIdentifier: 
+  question: 'A Programmer uses the following code to serialize game data in Unity:
+
+    
+
+    01
+    SaveGameData(GameData gameData, String filePath)
+
+    02 {
+
+    03   var serializedData
+    = JsonUtility.ToJson(gameData);
+
+    04 }
+
+    
+
+    The Programmer wants
+    to save the game data to the file represented by filePath. The file must be created
+    unless the file already exists. If the file already exists, the file must be
+    overwritten.
+
+    
+
+    Which code segment should the Programmer use?'
+  wrongAnswer1: new XDocument(serializedData).SaveAsync();
+  wrongAnswer2: new StreamWriter(serializedData).WriteLine();
+  wrongAnswer3: File.CreateText(filePath).Write(serializedData);
+  correctAnswer: File.WriteAllText(filePath, serializedData);
+  showAnswer: 'The Programmer should use the following code:
+
+    
+
+    File.WriteAllText(filePath,
+    serializedData);
+
+    
+
+    The WriteAllText method of the File class writes
+    text data to a file.
+
+    
+
+    The Programmer should not use the following
+    code:
+
+    
+
+    new StreamWriter(serializedData).WriteLine();
+
+    
+
+    The
+    StreamWriter class enables you to write text or object data to a file. However,
+    the constructor should represent the file name.
+
+    
+
+    The Programmer should
+    not use the following code:
+
+    
+
+    File.CreateText(filePath).Write(serializedData);
+
+    
+
+    The
+    CreateText method throws an exception if the file already exists.
+
+    
+
+    The
+    Programmer should not use the following code:
+
+    
+
+    new XDocument(serializedData).SaveAsync();
+
+    
+
+    The
+    XDocument class represents an XML document, not a JSON document.'

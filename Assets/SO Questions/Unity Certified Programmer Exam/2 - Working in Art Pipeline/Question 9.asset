@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 9
+  m_EditorClassIdentifier: 
+  question: 'The NPCs in a game can be forced to dance if the player plays music.
+    The dance NPCs perform will depend on the genre of music the player selects.
+    The NPC will continue to dance while in range of the music, after which the NPC
+    will stop dancing and return to an idle animation. Currently the music genres
+    are contained in an enum and include Salsa, HipHop, Swing, Disco, and ChickenDance.
+    Many more dances are scheduled to be added, both before launch and after as DLC.
+
+
+    What
+    method can the Programmer use to instruct which dance animation to perform, while
+    minimizing the work required to add new dances?'
+  wrongAnswer1: Animator.SetBool
+  wrongAnswer2: Animator.SetTrigger
+  wrongAnswer3: Animator.SetTarget
+  correctAnswer: Animator.SetInteger
+  showAnswer: "The Programmer should use Animator.SetInteger to pass in the enum
+    of the selected genre cast as an integer. In the Animation Controller, a single
+    Int Parameter can control what dance is started. New animations need only add
+    the genre to the enum and add the condition of equaling the enum's value to the
+    transition in. The method might look like this:\r\n\r\n    private void PlayDance(Dance
+    genre) {\r\n         anim.SetInteger(\"DanceGenre\", (int)genre);\r\n     }\r\n\r\nWhile
+    the Programmer could use Animator.SetBool, this would require extra steps within
+    the Unity Editor and is furthermore subject to spelling errors. Therefore, the
+    Programmer should not use this technique. After adding the genre to the enum,
+    a new Bool Parameter would need to be added to the Animation Controller and used
+    in the transition. If the Parameter had the exact same name as the enum, the
+    following code could be used:\r\n\r\n    private void PlayDance(Dance genre)
+    {\r\n         anim.SetBool(genre.ToString(), true);\r\n    }\r\n\r\nAs with SetBool,
+    SetTrigger could be used but carries the same extra steps within the Unity Editor
+    and is furthermore subject to spelling errors. Therefore, the Programmer should
+    not use this technique. Each new genre would need a new Trigger Parameter added
+    to the Animation Controller and used in the transition. Again, if the Parameter
+    had the exact same name as the enum, the following code could be used:\r\n\r\n   
+    private void PlayDance(Dance genre) {\r\n         anim.SetTrigger(genre.ToString());\r\n   
+    }\r\n\r\nThe Programmer should not use Animator.SetTarget. This sets the Avatar
+    for the given Animator. While this is useful for retargeting animations, it will
+    not help the Programmer to select which genre of music the NPC dances to."

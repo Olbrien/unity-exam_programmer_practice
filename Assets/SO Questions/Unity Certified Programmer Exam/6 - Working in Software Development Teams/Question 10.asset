@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 10
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is reviewing the code placed on a GameObject and notices
+    that one of the class names must be changed to reflect the new function it serves.
+    After making the changes, the Programmer runs the application and finds that
+    the Update() function is no longer being called.
+
+    
+
+    What should the
+    Programmer do to resolve this issue?'
+  wrongAnswer1: Remove the old script and add the script in the Editor Inspector
+    again.
+  wrongAnswer2: Make sure the new class name is capitalized.
+  wrongAnswer3: Make sure the class inherits from MonoBehaviour.
+  correctAnswer: Change the script's file name to be the same as the class name.
+  showAnswer: 'You should change the script''s file name to be the same as the class
+    name to resolve this issue. A script can only be attached to a GameObject when
+    it inherits from MonoBehavior or when it contains one class with the same name
+    as the script file. In this scenario, the script met these conditions when it
+    was first attached to the GameObject. However, once the class name is changed
+    to be different from the script file, Unity no longer recognizes it as a component,
+    and the script does not run at all.
+
+    
+
+    You should not remove the old
+    script or add the script in the Editor Inspector again to resolve this issue.
+    There are conditions that must be met for Unity to recognize the class as one
+    that can be used as a component. Adding the script again without changing the
+    conditions serves no purpose.
+
+    
+
+    You should not make sure the new class
+    name is capitalized to resolve this issue. In C#, capitalized class names are
+    a convention and should be followed. However, this has no bearing on whether
+    Unity recognizes the class as an attachable component.
+
+    
+
+    You should
+    not make sure the class inherits from MonoBehaviour to resolve this issue. Because
+    the component was attached successfully, it is already known that the class inherits
+    from MonoBehavior.'

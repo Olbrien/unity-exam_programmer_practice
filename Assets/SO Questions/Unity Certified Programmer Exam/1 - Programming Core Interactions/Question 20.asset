@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 20
+  m_EditorClassIdentifier: 
+  question: 'A game has players interacting with and battling aliens from other dimensions.
+    The player can change their view to see creatures from another dimension in addition
+    to normal objects. Only one dimension can be viewed at a time. The three dimensions
+    are known as the Red, Green, and Blue dimensions. Viewing another dimension takes
+    energy, and after a set time the player will revert to seeing no extra dimensions.
+    Certain levels take the player to one of the three dimensions, where only objects
+    of that dimension are visible, and the player''s ability to see other dimensions
+    is disabled.
+
+
+    The aliens and other dimensional objects are assigned to a
+    Layer depending on which dimension they belong to. The Layers are RedDimension,
+    GreenDimension, and BlueDimension.  A script for the player''s view already exists,
+    and has the main Camera already cached as mainCamera.
+
+
+    What method should
+    the Programmer create to make a certain dimension visible to the player or no
+    extra dimensions visible?'
+  wrongAnswer1: "public void SeeDimension(string dimension) \r\n{\r\n   mainCamera.cullingMask
+    |= ~LayerMask.GetMask(\"RedDimension\", \"GreenDimension\", \"BlueDimension\");\r\n  
+    mainCamera.cullingMask &= 1 << LayerMask.NameToLayer(dimension);\r\n}"
+  wrongAnswer2: "public void SeeDimension(string dimension) \r\n{\r\n   mainCamera.cullingMask
+    |= LayerMask.GetMask(\"RedDimension\", \"GreenDimension\", \"BlueDimension\");\r\n  
+    mainCamera.cullingMask &= 1 << LayerMask.NameToLayer(dimension);\r\n}"
+  wrongAnswer3: "public void SeeDimension(string dimension) \r\n{\r\n   mainCamera.cullingMask
+    &= LayerMask.GetMask(\"RedDimension\", \"GreenDimension\", \"BlueDimension\");\r\n  
+    mainCamera.cullingMask |= 1 << LayerMask.NameToLayer(dimension);\r\n}"
+  correctAnswer: "public void SeeDimension(string dimension) \r\n{\r\n   mainCamera.cullingMask
+    &= ~LayerMask.GetMask(\"RedDimension\", \"GreenDimension\", \"BlueDimension\");\r\n  
+    mainCamera.cullingMask |= 1 << LayerMask.NameToLayer(dimension);\r\n}\r"
+  showAnswer: "The Programmer should use the following method:\r\n\r\npublic void
+    SeeDimension(string dimension) \r\n{\r\n   mainCamera.cullingMask &= ~LayerMask.GetMask(\"RedDimension\",
+    \"GreenDimension\", \"BlueDimension\");\r\n   mainCamera.cullingMask |= 1 <<
+    LayerMask.NameToLayer(dimension);\r\n}\r\n\r\nThe Programmer should create a
+    bitmask using LayerMask.GetMask and pass in each of the three dimension Layer
+    names. This creates a bitmask containing only these three layers. Then, by and-comparing
+    and assigning the inverse of this mask with the current Layer selection of mainCamera.cullingMask,
+    the three dimensions are culled from the Camera's view. Finally, by using LayerMask.NameToLayer
+    to return the Layer number of the passed string, this value is left-shifted into
+    a new mask that is or-compared with and assigned to the current Layer selection
+    of mainCamera.cullingMask. This reveals the passed dimension. If the passed dimension
+    is not a recognized Layer, it returns -1, and the culling mask of mainCamera
+    remains unchanged.\r\n\r\nThe Programmer must inverse the LayerMask.GetMask results.
+    Otherwise, non-dimension layers will be culled during the &= operator.\r\n\r\nIf
+    the Programmer uses the |= operator on the LayerMask.GetMask results, the three
+    dimensions will be rendered instead of culled.\r\n\r\nFinally, if the Programmer
+    uses the &= operator on the LayerMask.NameToLayer results, all Layers but the
+    passed dimension will be culled, and possibly not even the passed dimension."

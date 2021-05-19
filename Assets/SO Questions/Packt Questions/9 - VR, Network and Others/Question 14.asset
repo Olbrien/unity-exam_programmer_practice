@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 14
+  m_EditorClassIdentifier: 
+  question: 'A programmer is creating a visual effect for an online multiplayer game
+
+    that
+    will spawn when a player jumps while having rocket boots equipped.
+
+
+    The
+    designer has created a particle system and attached it as a child to an
+
+    empty
+    Game Object called BoostEffect.
+
+
+    The BoostEffect object has both a Network
+    Identity and a
+
+    NetworkTransform component on it.
+
+
+    The BoostEffect
+    object is spawned on the network into the level at the
+
+    location of the
+    jump, but never moves or rotates after it is spawned. The
+
+    effect does not
+    interact with other players on the network but should be
+
+    visible to them.
+
+
+    What
+    property of the NetworkTransform component should the
+
+    programmer change
+    from the default value to optimize the impact this
+
+    object will have on
+    the connection between the players?'
+  wrongAnswer1: Decrease Interpolate Movement Factor to 0.01
+  wrongAnswer2: Increase MovementThreshold to 0.005
+  wrongAnswer3: Set Transform Sync Mode to Sync Rigidbody 3D
+  correctAnswer: Set Network Send Rate to 0
+  showAnswer: Explanation not provided for this entire Practice Test.

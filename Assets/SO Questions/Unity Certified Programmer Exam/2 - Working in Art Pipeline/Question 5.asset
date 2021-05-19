@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 5
+  m_EditorClassIdentifier: 
+  question: 'A Game Design Document (GDD) specifies that the user has a flashlight
+    item that must be regularly refreshed with batteries. As the flashlight''s power
+    begins to drain, the light slowly becomes dimmer. Once the flashlight has less
+    than 25% power remaining, the light begins to flicker randomly.
+
+
+    Which light
+    property should be controlled to meet these requirements?'
+  wrongAnswer1: light.renderMode
+  wrongAnswer2: light.bounceIntensity
+  wrongAnswer3: light.range
+  correctAnswer: light.intensity
+  showAnswer: 'You should control the light.intensity property to meet the requirements.
+    The intensity controls how bright the light is. As the power begins to drain,
+    the intensity should start to be lowered proportionally. When the battery reaches
+    25 percent, the intensity should be set randomly to 0 and back to 25 percent
+    to produce the flicker effect.
+
+
+    You should not control the light.range property
+    to meet the requirements. This property can affect how bright a light appears
+    at a certain distance. Changing this property may have unwanted effects, such
+    as decreasing the radius the light is able to illuminate.
+
+
+    You should not
+    control the light.bounceIntensity property to meet the requirements. This property
+    defines how strongly the light bounces off objects, not its intensity.
+
+
+    You
+    should not control the light.renderMode property to meet the requirements. This
+    property defines the fidelity and performance of the light, not its intensity.'

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 3
+  m_EditorClassIdentifier: 
+  question: 'An artist has approached you, requesting you to make a visual change
+    to
+
+    the sci-fi game you are currently working on. He has requested you to
+
+    shrink
+    a series of asteroids over time as they hurtle closer to a planet.
+
+
+    The
+    asteroids come from a particle system emitter; which module would
+
+    suit
+    the requirement from the artist?'
+  wrongAnswer1: Renderer
+  wrongAnswer2: Texture Sheet Animation
+  wrongAnswer3: Sub Emitters
+  correctAnswer: Size Over Lifetime
+  showAnswer: Explanation not provided for this entire Practice Test.

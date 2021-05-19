@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 6
+  m_EditorClassIdentifier: 
+  question: 'A Programmer must write code to send messages from a transmitter component
+    to receiver components on child GameObjects that implement a TreeDied() function.
+
+    
+
+    The
+    Programmer has an example of a tree with leaves. Some portions of these leaves
+    have the receivercomponent. When the tree dies, it must send a message to these
+    leaves.
+
+    
+
+    Which function should be used to solve this problem?'
+  wrongAnswer1: BroadcastMessage("TreeDied", gameObject, SendMessageOptions.RequireReceiver);
+  wrongAnswer2: SendMessageUpwards("TreeDied", gameObject, SendMessageOptions.RequireReceiver);
+  wrongAnswer3: SendMessage("TreeDied", gameObject, SendMessageOptions.DontRequireReceiver);
+  correctAnswer: BroadcastMessage("TreeDied", gameObject, SendMessageOptions.RequireReceiver);
+  showAnswer: "You should use the BroadcastMessage(\"TreeDied\", gameObject, SendMessageOptions.DontRequireReceiver)
+    function to solve this problem. The BroadcastMessage calls the TreeDied method
+    on every MonoBehaviour in gameObject and any of its children. Because not all
+    leaves have a receiver component, the SendMessageOptions.DontRequireReceiver
+    function ensures that GameObjects that do not have a MonoBehaviour with a method
+    TreeDied defined are ignored.\r\n\r\nYou should not use the BroadcastMessage(\"TreeDied\",
+    gameObject, SendMessageOptions.RequireReceiver) function to solve this problem.
+    Although the BroadcastMessage calls the TreeDied method on gameObject and its
+    children, not all leaves have a receiver component added. The parameter SendMessageOptions.RequireReceiver
+    results in an error message when it attempts to call the TreeDied method on GameObjects
+    that do not have the receiver component.\r\n\r\nYou should not use the SendMessageUpwards(\"TreeDied\",
+    gameObject, SendMessageOptions.RequireReceiver) function to solve this problem.
+    The SendMessageUpwards function attempts to call the TreeDied method on the gameObject
+    and on every ancestor of gameObject. Because the gameObject (the tree) does not
+    contain a TreeDied method, the use of this function results in an error message.\r\r\n\r\nYou
+    should not use the SendMessage(\"TreeDied\", gameObject, SendMessageOptions.DontRequireReceiver)
+    function to solve this problem. The SendMessage function calls the TreeDied method
+    on the gameObject only. It does not call the method on any of its child gameObjects
+    that contain the receiver component."

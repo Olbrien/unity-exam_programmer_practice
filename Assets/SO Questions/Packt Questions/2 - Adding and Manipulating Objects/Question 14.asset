@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 14
+  m_EditorClassIdentifier: 
+  question: 'You have introduced a multiplayer split-screen mode to your game. You
+
+    are
+    now dividing the screen into two rows.
+
+
+    How should the programmer set the
+    Viewport Rect options on the cameras?'
+  wrongAnswer1: 'Set both camera''s W to 1. Set Player 1 H to 0.5 and Player 2 H
+    to 1. Set
+
+    both cameras Y to 0.5.'
+  wrongAnswer2: 'Set both camera''s W to 0.5, H to 1. Set Player 1 Y to 1 and Player
+    2 Y to
+
+    0.5.'
+  wrongAnswer3: 'Set both camera''s W to 1, H to 0.5. Set Player 1 Y to 1 and Player
+    2 Y to
+
+    0.5.'
+  correctAnswer: "Set both camera's W to 1, H to 0.5. Set Player 1 Y to 0.5 and Player
+    2 Y\r\nto 0.\r"
+  showAnswer: Explanation not provided for this entire Practice Test.

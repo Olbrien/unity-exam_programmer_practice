@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 3
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is setting up audio for a language-learning application.
+    Subtle background music is used to help the user focus. A voice instructs the
+    user how to pronounce words, while visual depictions of the words move and make
+    sound to aid in understanding the word.
+
+    
+
+    If the user opens the main
+    menu, all sound needs to stop except for the background music. If the user exits
+    the main menu, the voice and sound effects resume playing from the point the
+    main menu was opened.
+
+    
+
+    How should the Programmer implement this feature?'
+  wrongAnswer1: 'On Start, execute {AudioSource.priority = 64;} for all AudioSources.
+
+    When
+    opening the main menu, execute {AudioSource.priority = 1;} for the background
+    music.
+
+    When exiting the main menu, execute {AudioSource.priority = 64;}
+    for the background music.'
+  wrongAnswer2: 'On Start, cache all AudioSources other than the background music.
+
+    When
+    opening the main menu, execute {AudioSource.mute = true;} for all cached AudioSources.
+
+    When
+    exiting the main menu, execute {AudioSource.mute = false;} for all cached AudioSources.'
+  wrongAnswer3: 'On Start, cache all AudioSources other than the background music.
+
+    When
+    opening the main menu, execute {AudioSource.enabled = false;} for all cached
+    AudioSources.
+
+    When opening the main menu, execute {AudioSource.enabled
+    = true;} for all cached AudioSources.'
+  correctAnswer: 'On Start, execute {AudioSource.ignoreListenerPause = true;} for
+    the background music.
+
+    When opening the main menu, execute {AudioListener.pause
+    = true;}.
+
+    When exiting the main menu, execute {AudioListener.pause = false;}.'
+  showAnswer: 'The Programmer should do the following:
+
+    
+
+    .On Start, execute
+    {AudioSource.ignoreListenerPause = true;} for the background music.
+
+    .When
+    opening the main menu, execute {AudioListener.pause = true;}.
+
+    .When exiting
+    the main menu, execute {AudioListener.pause = false;}.
+
+    
+
+    The Programmer
+    should set the background music''s AudioSource.ignoreListenerPause to true on
+    Start. This will cause it to ignore pausing by the AudioListener. Then, when
+    entering and exiting the main menu, using AudioListener.pause will allow all
+    AudioSources other than the background music to pause and resume where they left
+    off. Background music will always play.
+
+    
+
+    The Programmer should not
+    use AudioSource.mute. This continues playback of sound, but at no volume. If
+    it is used to pause sound while in the main menu, the voice and sound effects
+    would resume at a different point than when the main menu was opened.
+
+    
+
+    The
+    Programmer should not use AudioSource.enabled. This would stop the audio source.
+    Depending on the settings, when it is re-enabled, it would begin playing from
+    the start of the sound clip or not play at all.
+
+    
+
+    The Programmer should
+    not alter the AudioSource.priority of the background music. This is used to determine
+    which sounds play if there are more AudioSources than available hardware channels.
+    Lower numbers are prioritized over larger numbers, but this would not keep sounds
+    from playing, only from being heard.
+
+'

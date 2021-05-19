@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: 'A space flight combat simulator features hundreds of ship designs and
+    expansive maps with obstacles such as asteroids and comets. Ships fire beams
+    of lasers, slow-moving blasts of energy, and missiles in an attempt to destroy
+    the other fleet. Ships can collide using physics, and some ships are even specialized
+    in this form of attack to redirect ships into other ships or obstacles. All movement
+    is physics-based. The game is suffering from performance issues, and using the
+    Profiler has revealed severe spikes in garbage collection.
+
+    
+
+    What
+    solution will address the issue?'
+  wrongAnswer1: Set Collision Detection to Discrete for all Rigidbodies.
+  wrongAnswer2: Use LODs for ships and obstacles.
+  wrongAnswer3: Increase the Fixed Timestep.
+  correctAnswer: Place projectiles in object pools.
+  showAnswer: 'The Programmer should pool the projectiles. This will avoid excessive
+    Instantiate and Destroy commands, which contribute significantly to garbage collection.
+    By reusing existing projectiles and disabling those that are no longer needed,
+    a more performant game can be achieved.
+
+    
+
+    The Programmer should not
+    increase the Fixed Timestep. This would not help alleviate garbage collection.
+    Fixed Timestep controls how often physics calculations occur. While this could
+    help a game run smoother if many calculations must take place, it will be less
+    accurate and will not solve the issue.
+
+    
+
+    The Programmer should not
+    set Collision Detection to Discrete for all Rigidbodies. While this could reduce
+    the time spent performing Physics simulation, it will not reduce the amount of
+    garbage collection occuring and slowing the game down.
+
+    
+
+    The Programmer
+    should not use LODs for ships and obstacles. This would improve performance on
+    the GPU, but not garbage collection. By substituting simpler geometry and shaders
+    at long distances, the Programmer could save the GPU time rendering.'

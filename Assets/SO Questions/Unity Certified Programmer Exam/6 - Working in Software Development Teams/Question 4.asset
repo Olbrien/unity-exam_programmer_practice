@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: "A Programmer is creating several three-dimensional game prototypes in
+    Unity. The Programmer decides to enable Unity Collaborate for the prototype projects.
+    The Programmer is the owner of the organization that contains the projects. \r\n\r\nThe
+    programmer needs to add two more people to create a team. The team must be able
+    to access all projects that have Unity Collaborate enabled in the organization.\r\n\r\nWhat
+    should the Programmer do first to add the team members?"
+  wrongAnswer1: Invite the team members from the Collaborate panel.
+  wrongAnswer2: Subscribe to Unity Pro.
+  wrongAnswer3: Subscribe to Unity Teams Advanced.
+  correctAnswer: Assign a Unity Teams seat to each person.
+  showAnswer: 'The Programmer should first assign a Unity Teams seat to each teammate.
+    To give a team member access to all projects that have Unity Collaborate enabled,
+    you must first ensure that the individual has a Unity Teams seat.
+
+    
+
+    The
+    Programmer should not subscribe to Unity Teams Advanced first. Both the Basic
+    plan and the Advanced plan will support up to three people, so there is no need
+    to use a specific plan in this case. Also, subscribing to the Advanced plan will
+    not automatically enable access for the team members.
+
+    
+
+    The Programmer
+    should not subscribe to Unity Pro first. This version is not required to access
+    Unity Collaborate. Also, subscribing to Unity Pro will not automatically enable
+    access for the team members.
+
+    
+
+    The Programmer should not invite the
+    team members from the Collaborate panel first. This would only grant the team
+    members access to a specific project, not all projects.'

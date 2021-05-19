@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 2
+  m_EditorClassIdentifier: 
+  question: 'We have a mobile game that is gesture-controlled, and we want to make
+    it
+
+    so we swipe the screen from one side to the other to release an event.
+
+
+    What''s
+    the best way of measuring our player''s finger press location from
+
+    and
+    to the Touch struct?'
+  wrongAnswer1: type
+  wrongAnswer2: phase
+  wrongAnswer3: fingerId
+  correctAnswer: deltaPosition
+  showAnswer: Explanation not provided for this entire Practice Test.

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 11
+  m_EditorClassIdentifier: 
+  question: "A Programmer must design an algorithm to find neighboring triangle pairs
+    in a Unity mesh. The return value of this algorithm must be an array of SharedEdge
+    objects that each contain the following information:\r\n\r\n * The indices of
+    the two triangles\r\n * The indices of the two vertices of the shared edge\r\n\r\nWhich
+    design consideration will most effectively reduce the heap usage of this algorithm?"
+  wrongAnswer1: Pack all four values into one 32-bit int.
+  wrongAnswer2: Derive SharedEdge from ScriptableObject.
+  wrongAnswer3: Use recursion instead of nested for loops.
+  correctAnswer: Make SharedEdge a struct instead of a class.
+  showAnswer: 'You should make SharedEdge a struct instead of a class to reduce heap
+    usage. A struct is a value type, and value types live on the stack in that they
+    exist within the scope of the method in which they are created. In the algorithm,
+    if SharedEdge was a class (which is a reference type), then every time a new
+    SharedEdge is created, it is placed on the heap.
+
+    
+
+    You should not
+    pack all four values into one 32-bit int to reduce heap usage. If the indices
+    grow too large, the int can overwrite the other part of the value. Additionally,
+    SharedEdge is still the main cause of heap usage.
+
+    
+
+    You should not
+    derive SharedEdge from ScriptableObject to reduce heap usage. ScriptableObject
+    is a class, which is a reference type that exists on the heap. Your goal is to
+    reduce heap usage.
+
+    
+
+    You should not use recursion instead of nested
+    for loops to reduce heap usage. Refactoring the code to use recursion can decrease
+    performance because it uses the call stack repeatedly.'

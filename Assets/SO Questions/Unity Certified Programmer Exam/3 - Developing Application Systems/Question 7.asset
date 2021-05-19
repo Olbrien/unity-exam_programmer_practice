@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 7
+  m_EditorClassIdentifier: 
+  question: 'A story-centric game features an in-depth character customization system.
+    Players can adjust character proportions and facial features, add props, change
+    clothing, and adjust colors. A key aspect of the game is the ability to store
+    and load these customizations throughout the story. Additionally, the ability
+    to import customizations from one save file and import them into another is a
+    highly desired feature. Future customization includes user-selected audio and
+    particle effects.
+
+    
+
+    What technique should a Programmer use to allow
+    for this functionality and support the desired future features?'
+  wrongAnswer1: Store character customizations as Properties in a struct with the
+    [System.Serializable] Attribute, and use JsonUtility.ToJson to save configurations.
+  wrongAnswer2: Store character customizations in a class that inherits from the
+    ISerializable interface, and use SerializationObjectManager to save configurations.
+  wrongAnswer3: Store character customizations as a CSV and use a StreamWriter and
+    StringBuilder to save configurations.
+  correctAnswer: Store character customizations as a ScriptableObject and use ScriptableObject.CreateInstance
+    to save configurations.
+  showAnswer: 'The Programmer should use a ScriptableObject and use ScriptableObject.CreateInstance
+    to save configurations. ScriptableObjects are perfectly suited for storing persistent
+    data as assets and can be easily written and accessed. Using CreateInstance creates
+    an asset, allowing for nearly unlimited save configurations.
+
+    
+
+    The
+    Programmer could use a CSV file constructed with a StringBuilder and written
+    using StreamWriter, but this is not an ideal solution because each change would
+    require the entire file to be rewritten. Writing a method for saving and loading
+    CSV files will be a lot of work, and any addition to the customization, such
+    as audio or particle effects, will require extensive changes to the save and
+    load functions.
+
+    
+
+    The Programmer should not store customization configurations
+    in Properties in a serialized struct. Properties cannot be serialized using JsonUtility.ToJson.
+    Any attempt to save the data in those Properties will result in a default value
+    being stored.
+
+    
+
+    The Programmer should not use a class that inherits
+    from the ISerializable interface. This has many of the same issues with using
+    StringBuilder and StreamWriter, although it writes files to binary. It is not
+    as efficient a solution as using ScriptableObjects.'

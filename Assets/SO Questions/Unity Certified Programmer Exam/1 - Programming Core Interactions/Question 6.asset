@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 6
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is working on a soccer game and must implement the goal
+    detection mechanism. In order to detect when the ball enters the goal area, the
+    Programmer decides to use a Sphere Collider on the ball Gameobject in conjunction
+    with a RigidBody component and a Box Collider for the goal Gameobject.
+
+    
+
+    The
+    Programmer wants to be able to detect when the ball Gameobject has entered the
+    goal Gameobject.
+
+    
+
+    What should the Programmer do?'
+  wrongAnswer1: Set the ball Sphere Collider isTrigger to true and detect the goal
+    using the OnCollisionEnter method implemented in a ball script.
+  wrongAnswer2: Set the ball Sphere Collider isTrigger to false and detect the goal
+    using the OnControllerColliderHit method implemented in a ball script.
+  wrongAnswer3: Set the ball Sphere Collider isTrigger to false and detect the goal
+    using the OnCollisionEnter method implemented in a ball script.
+  correctAnswer: Set the Box Collider for the goal isTrigger to true, and detect
+    the ball using an OnTriggerEnter method.
+  showAnswer: "The Programmer should set the ball Sphere Collider isTrigger to true
+    and detect the goal using the OnTriggerEnter method. By setting the isTrigger
+    to true, Unity will invoke the method OnTriggerEnter as soon as the Gameobject
+    intersects with any other collider in the scene.\r\n\r\nThe Programmer should
+    not should set the ball Sphere Collider isTrigger to false and detect the goal
+    using the OnCollisionEnter method. By not setting the ball Sphere Collider isTrigger
+    to true, Unity physics will prevent the ball from entering the goal, as if the
+    goal was a solid square block.\r\n\r\nThe Programmer should not set the ball
+    Sphere Collider isTrigger to true and detect the goal using the OnCollisionStay
+    method. The OnCollisionStay method will be invoked every frame while the ball
+    is inside the goal's Box Collider, and not only once when it enters. \r\n\r\nThe
+    Programmer should not set the ball Sphere Collider isTrigger to true and detect
+    the goal using the OnCollisionEnter method. The OnCollisionEnter method is only
+    called when none of the Colliders involved has the isTrigger set to true."

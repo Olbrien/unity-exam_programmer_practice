@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 2
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is developing a mining simulation game where the player
+    can dig through the ground in search of minerals. In one of the sites, the player
+    can create a tunnel that intersects an existing cave system. The Design Document
+    specifies that any audio that occurs in both the current caves or new tunnels
+    should have some reverb. The Programmer needs to make sure the user is consistently
+    in the closest cave''s ReverbZone.
+
+    
+
+    How should the Programmer manipulate
+    the AudioReverbZone properties to meet these requirements?'
+  wrongAnswer1: Increase the decayTime on the new area.
+  wrongAnswer2: Increase the reverb to accommodate the new area.
+  wrongAnswer3: Increase the reflections to fit the new area.
+  correctAnswer: Increase the maxDistance to fit the new area.
+  showAnswer: 'You should increase the maxDistance to fit the new area. The maxDistance
+    property specifies the maximum distance from the centerpoint that the reverb
+    effect should reach.
+
+    
+
+    You should not increase the reflections to
+    fit the new area. The reflections property refers to the level of early reflections
+    relative to room effect.
+
+    
+
+    You should not increase the reverb on the
+    new area. The reverb property controls the late reverb level relative to room
+    effect.
+
+    
+
+    You should not increase the decayTime to accommodate the
+    new area. The decayTime property controls the reverb decay time at mid frequencies.'

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 3
+  m_EditorClassIdentifier: 
+  question: "While writing a loading function, a Programmer receives the following
+    compile error:\r\n\r\nerror CS1624 \r\n\r\nvoid LevelLoading(){ \r\nAsyncOperation
+    async = SceneManager.LoadSceneAsync(\"Level_01\"); \r\n   while (!async.isDone)
+    \r\n     { \r\n         yield return null; \r\n     }\r\n }\r\n\r\nWhat should
+    the Programmer do to fix this error?"
+  wrongAnswer1: Change yield return null to yield return WaitForSeconds(0).
+  wrongAnswer2: Change SceneManager.LoadSceneAsync("Level_01")to Application.LoadLevelAdditiveAsync("Level_01").
+  wrongAnswer3: Change while (!async.isDone) to while (!async.allowSceneActivation).
+  correctAnswer: Change void LevelLoading() to IEnumerator LevelLoading().
+  showAnswer: "You should change void LevelLoading() to IEnumerator LevelLoading()
+    to fix this error. Unity uses coroutines to perform asynchronous actions, and
+    these coroutines must return IEnumerators (or null). In this case, the yield
+    keyword signifies that it needs to pause or finish the execution of the code,
+    but LevelLoading() must be a coroutine in order to do that.\r\n\r\nYou should
+    not change yield return null to yield return WaitForSeconds(0) to fix the error.
+    Yield WaitForSeconds(0) will pause the execution of code for 0 seconds in scaled
+    time. However, as long a yield is used in this method, it will be  \r\ntreated
+    as a coroutine that must return an IEnumerator.\r\n\r\nYou should not change
+    SceneManager.LoadSceneAsync(\"Level_01\") to \r\nApplication.LoadLevelAdditiveAsync(\"Level_01\")
+    to fix the error. LoadLevelAdditiveAsync() is now an obsolete method that will
+    add another scene into the current one without destroying anything in the current
+    scene. LoadSceneAsync() can also do this by passing a LoadSceneMode.Additive
+    parameter to the method, but it is not related to this issue.\r\n\r\nYou should
+    not change while (!async.isDone) to while (!async.allowSceneActivation) to fix
+    the error. The Boolean allowSceneActivation can be used to determine whether
+    scenes should be activated once they are ready."

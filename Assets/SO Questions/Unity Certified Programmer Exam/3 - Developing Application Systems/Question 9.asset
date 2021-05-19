@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 9
+  m_EditorClassIdentifier: 
+  question: 'A Programmer uses Unity Analytics to track which stages of a game each
+    player has already cleared. The Programmer must add tracking for how much gold
+    a player accumulates in each stage by using a custom parameter named stage_gold.
+    The value of the stage_gold parameter must come from a field named Score.gold.
+
+    
+
+    The
+    Programmer decides to use the LevelComplete method in the AnalyticsEvent class.
+    The LevelComplete method should be called after the stage is completed, and after
+    a custom method named StageCompleted is invoked.
+
+    
+
+    What code should
+    the Programmer use to implement the StageCompleted method?'
+  wrongAnswer1: "public void StageCompleted(){\r\nList customParams = new List ();\r\ncustomParams.Add(\"stage_gold
+    = \" + Score.gold.ToString());\r\n\r\nAnalyticsEvent.LevelComplete(currentGameLevelId,
+    customParams);\r\n}\r"
+  wrongAnswer2: 'public void StageCompleted(){
+
+    Dictionary<string, object> customParams
+    = new Dictionary<string, string>();
+
+    customParams.Add("stage_gold", "100");
+
+    
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId,
+    null, customParams);
+
+    }'
+  wrongAnswer3: 'public void StageCompleted(){
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId);
+
+    }'
+  correctAnswer: 'public void StageCompleted(){
+
+    Dictionary<string, object>
+    customParams = new Dictionary<string, object>();
+
+    customParams.Add("stage_gold",
+    Score.gold);
+
+    
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId, null,
+    customParams);
+
+    }'
+  showAnswer: 'The Programmer should implement the StageCompleted method by using
+    the following code:
+
+    
+
+    public void StageCompleted(){
+
+    Dictionary<string,
+    object> customParams = new Dictionary<string, object>();
+
+    customParams.Add("stage_gold",
+    Score.gold);
+
+    
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId, null,
+    customParams);
+
+    }
+
+    
+
+    The AnalyticsEvent.LevelComplete can be invoked
+    by using custom parameters. To accomplish this, in addition to the level ID,
+    you must pass in a Dictionary<string, object> containing the custom parameters
+    that you want to send. In this case, the Score.gold is being sent inside the
+    customParams dictionary using the string "stage_gold" as the key.
+
+    
+
+    The
+    Programmer should not implement the StageCompleted method by using the following
+    code:
+
+    
+
+    public void StageCompleted(){
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId);
+
+    }
+
+    
+
+    The
+    Programmer should also pass the amount of gold acquired by the player in the
+    given stage. This should be done by using the LevelComplete overload that can
+    receive custom parameters.
+
+    
+
+    The Programmer should not implement the
+    StageCompleted method by using the following code:
+
+    
+
+    public void StageCompleted(){
+
+    Dictionary<string,
+    object> customParams = new Dictionary<string, string>();
+
+    customParams.Add("stage_gold",
+    "100");
+
+    
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId, null, customParams);
+
+    }
+
+    
+
+    The
+    AnalyticsEvent.LevelComplete can be invoked by using custom parameters, but the
+    custom parameters must be a Dictionary<string, object> and not Dictionary<string,string>.
+    This code will not compile.
+
+    
+
+    The Programmer should not implement
+    the StageCompleted method by using the following code:
+
+    
+
+    public void
+    StageCompleted(){
+
+    List<string> customParams = new List <string>();
+
+    customParams.Add("stage_gold
+    = " + Score.gold.ToString());
+
+    
+
+    AnalyticsEvent.LevelComplete(currentGameLevelId,
+    customParams);
+
+    }
+
+    
+
+    The AnalyticsEvent.LevelComplete can be invoked
+    by using custom parameters, but there is not any overload that receives a List<string>,
+    only a Dictionary<string, object>. This code will not compile.'

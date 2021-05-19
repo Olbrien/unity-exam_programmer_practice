@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 7
+  m_EditorClassIdentifier: 
+  question: 'A game has missiles that the player must shoot down. The Missile class
+    inherits from MonoBehaviour. It will attempt to reach a target and will explode
+    if it reaches the target or is shot down.
+
+    
+
+    When it explodes, the
+    Missile issues a callback from the Explode() method that informs nearby GameObjects
+    of the explosion. Destroying a Missile close to other Missile objects can push
+    them back from the target or even make them explode if they are near enough.
+    Each Missile also has a countdown timer and will cease trying to reach the target
+    when the timer runs out. The Programmer has been asked to test Missile.
+
+    
+
+    What
+    method should the Programmer use to test for when the timer of the Missile reaches
+    zero?'
+  wrongAnswer1: 'Alter Missile to also inherit from the ITestRunCallbackinterface.
+
+    Return
+    true from the IsTestFinished Property when the timer reaches zero.
+
+    Write
+    a [TestRunCallback] method that uses a MonoBehaviourTest<Missile>() coroutine.'
+  wrongAnswer2: 'Alter Missile to also inherit from the ITestRunCallback interface.
+
+    In
+    the Explode() method, call the TestFinished method.
+
+    Write a [TestRunCallback]
+    method that uses a MonoBehaviourTest<Missile>() coroutine.'
+  wrongAnswer3: 'Alter Missile to also inherit from the IMonoBehaviourTest interface.
+
+    In
+    the Explode() method, set the IsTestFinished Property to true.
+
+    Write a
+    [UnityTest] method that uses a MonoBehaviourTest<Missile>() coroutine.'
+  correctAnswer: 'Alter Missile to also inherit from the IMonoBehaviourTest interface.
+
+    Return
+    true from the IsTestFinished Property when the timer reaches zero.
+
+    Write
+    a [UnityTest] method that uses a MonoBehaviourTest<Missile>() coroutine.'
+  showAnswer: 'The Programmer should add inheritance from the IMonoBehaviourTest
+    to the Missile. This will add the IsTestFinished Property. IsTestFinished should
+    have {return if timer <= 0f;} as its get code. By writing a method that uses
+    the [UnityTest] attribute and returns an IEnumerator, the Programmer can call
+    a coroutine using {yield return new MonoBehaviourTest<Missile>();} to test for
+    when the Missile''s timer reaches zero.
+
+    
+
+    The Programmer should not
+    return a completed test from the Explode method. This is not what needs to be
+    tested. An exploded Missile''s timer will not necessarily have run out.
+
+    
+
+    The
+    Programmer should not use the [TestRunCallback] attribute or inherit from ITestRunCallbackinterface.
+    This is used to initiate call-after functions during steps taken during testing.
+    Although Explode may issue a callback, it has specific functionality towards
+    other GameObjects and is not used to inform the testing functions.'

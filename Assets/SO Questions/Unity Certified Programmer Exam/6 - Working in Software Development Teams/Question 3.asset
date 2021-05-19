@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 3
+  m_EditorClassIdentifier: 
+  question: 'A Programmer wants to store a Unity project in Azure DevOps source control
+    so that it can be accessed by other Programmers on the team. The Programmer opens
+    the project editor settings in Unity.
+
+    
+
+    The Programmer needs to choose
+    the correct version control mode.
+
+    
+
+    Which version control mode should
+    the Programmer use?'
+  wrongAnswer1: PlasticSCM
+  wrongAnswer2: Asset Server
+  wrongAnswer3: Hidden Meta Files
+  correctAnswer: Visible Meta Files
+  showAnswer: 'The Programmer should use Visible Meta Files. This ensures that a
+    .meta file is created for each asset. This file contains information about the
+    asset that is used by Unity, such as a GUID used to reference the asset. You
+    can then check all the files in the project directory, with the exception of
+    the files in the Library folder, into source control.
+
+    
+
+    The Programmer
+    should not use Asset Server. This setting allows you to store assets on a server
+    machine.
+
+    
+
+    The Programmer should not use Hidden Meta Files. This prevents
+    the creation of the .meta files. This causes new .meta files to be created when
+    another Programmer retrieves the files from source control. Therefore, when Unity
+    references a particular asset by its GUID, it will be referencing the incorrect
+    asset.
+
+    
+
+    The Programmer should not use PlasticSCM. PlasticSCM is a
+    version control system.
+
+    
+
+    The Programmer should not use Perforce.
+    Perforce is a version control system.'

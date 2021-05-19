@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 10
+  m_EditorClassIdentifier: 
+  question: "The whole development team have nearly finished creating their \"Spitfire\r\nBattle
+    of Britain\" game and want to add particle effects to the back of each\r\nSpitfire
+    plane as a final touch.\r\nOne of the game designers has suggested smoke coming
+    out of the back of\r\nthe Spitfire should change randomly to emphasize the choppiness
+    of the\r\nwind. \n\nYou have programmed to the point where the particle effect
+    is\r\ndetecting wind, but what should you do to the particle smoke to show that\r\nthe
+    wind is affecting the smoke?"
+  wrongAnswer1: Change the Angular Velocity property in the Rotation by Speed module.
+  wrongAnswer2: Set the Multiplier property in the External Forces module to 0.
+  wrongAnswer3: Alter the curve of the Size property in the Size by Speed module.
+  correctAnswer: Increase the Strength property in the Noise module.
+  showAnswer: Explanation not provided for this entire Practice Test.

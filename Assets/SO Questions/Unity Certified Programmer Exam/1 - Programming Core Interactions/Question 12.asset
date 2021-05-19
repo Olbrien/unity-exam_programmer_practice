@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 12
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is creating a non-physics-based movement system. The Design
+    Document (DD) requires the object being controlled to move at a consistent speed
+    without any smoothing. The Programmer notices that if both the horizontal and
+    the vertical input keys are pressed at the same time, the object moves a bit
+    faster diagonally than it does if only one input key is held.
+
+
+    Which movement
+    code should the Programmer use to meet the design requirements?'
+  wrongAnswer1: 'Vector3 movementInput = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+
+    transform.Translate(movementInput.Normalize()
+    * speed * Time.deltaTime);'
+  wrongAnswer2: 'Vector3 movementInput = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+
+    transform.Translate(movementInput
+    * speed * Time.deltaTime);'
+  wrongAnswer3: 'Vector3 movementInput = new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical"));
+
+    transform.Translate(movementInput
+    * speed * Time.deltaTime);'
+  correctAnswer: 'Vector3 movementInput = new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical"));
+
+    transform.Translate(movementInput.normalized
+    * speed * Time.deltaTime);'
+  showAnswer: "You should use the following code to meet the design requirements:
+    \r\n\r\nVector3 movementInput =new Vector3(Input.GetAxisRaw(\"Horizontal\"),0,Input.GetAxisRaw(\"Vertical\"))\r\ntransform.Translate(movementInput.normalized
+    * speed *Time.deltaTime);\r\n\r\nThis code will create the Vector3 movementInput
+    variable containing the RAW values for the Horizontal and Vertical axes. The
+    raw values will either be -1, 0, or +1.\r\n\r\nThis code will also normalize
+    the movementInput variable, which means it will point to the same direction as
+    before but have magnitude 1, the same magnitude when it is moving left or forward.
+    Finally, it multiplies the variable by the speed and the time passed since the
+    last frame to get the final position of the object.\r\n\r\nYou should not use
+    the following code:\r\n\r\nVector3 movementInput =new Vector3(Input.GetAxis(\"Horizontal\"),0,Input.GetAxis(\"Vertical\"));\r\ntransform.Translate(movementInput*
+    speed * Time.deltaTime);\r\n\r\nThis code does not call the Input.GetAxisRaw
+    method for the axis. Instead, it uses Input.GetAxis, which causes a smoothing
+    effect on the movement. The code also fails to normalize the movementInput vector.
+    Therefore, when moving diagonally, the magnitude of the vector is the square
+    root of 2, or ~1.414, which is greater than 1 and will result in a faster diagonal
+    movement.\r\n\r\nYou should not use the following code:\r\n\r\ntransform.Translate(movementInput
+    * speed * Time.deltaTime);\r\n\r\nThis piece of the code does not normalize the
+    movementInput vector. When moving diagonally, the magnitude of the vector is
+    the square root of 2, or ~1.414, which is greater than 1 and will result in a
+    faster diagonal movement.\r\n\r\nYou should not use the following code:\r\n\r\nVector3
+    movementInput = new Vector3(Input.GetAxis(\"Horizontal\"),0,Input.GetAxis(\"Vertical\"));\r\n\r\nThis
+    code does not call the Input.GetAxisRaw method for the axis. Instead, it uses
+    Input.GetAxis, which causes a smoothing effect on the movement."

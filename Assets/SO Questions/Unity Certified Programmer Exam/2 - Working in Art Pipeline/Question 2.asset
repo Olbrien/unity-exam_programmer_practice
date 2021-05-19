@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 2
+  m_EditorClassIdentifier: 
+  question: 'A Programmer is animating a Material at runtime using a script and cannot
+    use an Animator. The Material uses a custom shader that has three Properties:
+
+
+    .
+    A texture named _MainTex that defaults to gray
+
+
+    . A color named _Color that
+    multiplies the texture and defaults to red
+
+
+    . A float named _Intensity that
+    multiplies the color, defaults to 0.75, and displays as a slider with a range
+    of 0 to 1
+
+
+    The shader is used to create glowing holograms in the scene.
+    It has only one pass, is unlit, additive, and opaque. The Material is cached
+    as holoMaterial in the script.
+
+
+    What method should the Programmer use to
+    set the Material to invisible?'
+  wrongAnswer1: holoMaterial.SetTexture("_MainTex", null);
+  wrongAnswer2: holoMaterial.SetColor("_Color", new Color(1f, 1f, 1f, 0f));
+  wrongAnswer3: holoMaterial.SetPass(0);
+  correctAnswer: holoMaterial.SetFloat("_Intensity", 0f);
+  showAnswer: 'The Programmer should use the following:
+
+
+    holoMaterial.SetFloat("_Intensity",
+    0f);
+
+
+    This is the only command that will turn the Material invisible. Multiplying
+    _Color and by extension _MainTex by zero produces black pixels. For an additive
+    shader, this equates to adding nothing to the screen, so it is invisible.
+
+
+    The
+    Programmer should not use the following:
+
+
+    holoMaterial.SetColor("_Color",
+    new Color(1f, 1f, 1f, 0f));
+
+
+    This is an opaque shader, and the alpha channel
+    is ignored. With the color being white aside from the alpha, the Material would
+    still be visible. A color of black (0f, 0f, 0f, 1f) would work.
+
+
+    The Programmer
+    should not use the following:
+
+
+    holoMaterial.SetTexture("_MainTex", null);
+
+
+    This
+    would cause the shader to use the default texture of gray. For an additive shader,
+    gray would produce visible pixels if the _Color was not black and _Intensity
+    was more than 0f.
+
+
+    The Programmer should not use the following:
+
+
+    holoMaterial.SetPass(0);
+
+
+    This
+    would instruct the shader to execute pass number 0. While this pass exists for
+    the shader, it would not alter the way it renders because this is the only pass
+    and is rendering by default.'

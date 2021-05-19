@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 9
+  m_EditorClassIdentifier: 
+  question: 'A successful high-end game for PC is receiving a limited port to mobile
+    devices in order to advertise the release of its sequel. There will be limited
+    content added, and a significant portion will be removed, but the publisher has
+    allocated a generous budget to the port. It is understood that the quality will
+    not be the same as on PC, and the important goal is to reach as wide an audience
+    as possible. Older mobile hardware needs to be supported.
+
+    
+
+    What change
+    should a Programmer make to achieve better performance on the targeted hardware?'
+  wrongAnswer1: Reduce LOD levels from four to two.
+  wrongAnswer2: Increase the Mip Map Priority of all Texures.
+  wrongAnswer3: Convert all audio clips from stereo to mono.
+  correctAnswer: Convert the project from linear to gamma.
+  showAnswer: 'The Programmer should convert the project from linear color space
+    to gamma. Linear color space is newer but is more calculation intensive. Older
+    devices, especially with mobile, do not have the capability of processing linear
+    color space assets and have no way to convert these to gamma. A large portion
+    of the intended demographic will be excluded without this change.
+
+    
+
+    The
+    Programmer should not convert audio clips from stereo to mono. This is not a
+    restriction of mobile hardware. Most mobile devices will automatically convert
+    stereo to mono if there is not support to play stereo audio files.
+
+    
+
+    The
+    Programmer should not increase Mip Map Priority of any Textures. This controls
+    the priority of streaming mip maps, as well as the quality. At best this would
+    have no effect, and at worst it would decrease performance.
+
+    
+
+    The
+    Programmer should not reduce LOD levels to two. This would likely have minimal
+    impact, or negatively impact the game. LODs are used to decrease the complexity
+    of models and materials rendered at a distance where details cannot be perceived.
+    Reducing the number of levels will cause objects to be culled too near the viewer,
+    or noticeably transition from one LOD to another.  At worst, highly detailed
+    models will be used farther out than needed.'

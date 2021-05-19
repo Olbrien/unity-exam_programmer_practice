@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 1
+  m_EditorClassIdentifier: 
+  question: "A programmer is creating a simulation in which a spaceship is piloted
+    by manually rotating individual thrusters. The spaceship is accelerating too
+    quickly and spinning on an incorrect axis.\n\nThe code is shown below:\n\n[RequireComponent(typeof(Rigidbody))]\npublic
+    class ship : MonoBehaviour\n{\n   public float maxThrust;\n   public Transform[]
+    thrusters;\n   private Rigidbody rb;\n   private void Start()\n   {\n      rb
+    = GetComponent<Rigidbody>();\n   }\n   private void Update()\n   {\n      foreach
+    (Transform t in thrusters)\n      {\n         rb.AddForce(t.forward * maxthrust
+    * Time.deltaTime, ForceMode.Force);\n         rb.AddTorque((t.position - transform.position)
+    * maxThrust * Time.deltaTime);\n      }\n   }\n}\n\nWhich two steps should the
+    Programmer take to fix the code?"
+  wrongAnswer1: Change Update() to FixedUpdate() and Add ForceMode.Force to the AddTorque()
+    call.
+  wrongAnswer2: Replace transform.position with rb.centerOfMass() and Check if rb
+    is null in Update().
+  wrongAnswer3: Add ForceMode.Force to the AddTorque() call and Change Update() to
+    FixedUpdate().
+  correctAnswer: Change Update() to FixedUpdate() and use rb.AddForceAtPosition()
+    in place of both calls.
+  showAnswer: "You should change Update() to FixedUpdate() and use rb.AddForceAtPosition()
+    in place of both calls to fix the code. Physics-based operations on a RigidBody
+    component should always occur on FixedUpdate() and not on Update().\n\nAlso,
+    because the AddForce method applies the force at the center of the GameObject,
+    you should use AddForceAtPosition() and specify the position of the thrusters.
+    The torque will be handled automatically.\n\nYou should not check whether rb
+    is null in Update() to fix the code. This is not required because the class has
+    the attribute [RequireComponent(typeof(Rigidbody))]. This ensures that this component
+    can only be used in gameObjects that have a RigidBody. Also, checking for null
+    does not fix any of the issues described. \n\nYou should not add ForceMode.Force
+    to the AddTorque() call to fix the code. The default parameter for the AddTorque()
+    method is already ForceMode.Force.\n\nYou should not replace transform.position
+    with rb.centerOfMass() to fix the code. centerOfMass is not even a method. It
+    is a propertry and should be used without parantheses. Also, using the center
+    of mass to apply the torque would not fix the rotation problem."

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 21
+  m_EditorClassIdentifier: 
+  question: 'You are developing a third-person game where your player will interact
+
+    and
+    talk to other characters. You are currently developing speech boxes
+
+    that
+    appear above each player''s head when they''re talking in the 3D world.
+
+
+    Which
+    canvas property would suit best a 3D environment for speech?'
+  wrongAnswer1: Screen Space Camera
+  wrongAnswer2: Pixel Perfect
+  wrongAnswer3: Screen Space Overlay
+  correctAnswer: World Space
+  showAnswer: Explanation not provided for this entire Practice Test.

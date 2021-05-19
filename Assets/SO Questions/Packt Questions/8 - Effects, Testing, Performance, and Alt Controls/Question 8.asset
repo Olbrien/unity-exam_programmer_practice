@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 8
+  m_EditorClassIdentifier: 
+  question: 'You have been asked to check specific parts of someone else''s code
+    by
+
+    creating custom methods to make sure the return type is what it should
+    be.
+
+
+    There is a name for the specific type of test you are performing.
+    What is it?'
+  wrongAnswer1: Static test
+  wrongAnswer2: Accessibility test
+  wrongAnswer3: Backend test
+  correctAnswer: Unit Test
+  showAnswer: Explanation not provided for this entire Practice Test.

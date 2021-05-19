@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: 'In the indie game you are developing, you have set your scene up so
+    that
+
+    the Environment Lighting Intensity Multiplier is set to an intensity
+    of
+
+    0.75. When your player completes the level and moves onto the next
+
+    scene,
+    the lighting is set at 1.24. You are using LoadSceneAsync with a
+
+    LoadSceneMode
+    of additive.
+
+
+    When you load up the next scene, what will the light intensity
+    be set to?'
+  wrongAnswer1: 1.24
+  wrongAnswer2: 0
+  wrongAnswer3: 1
+  correctAnswer: 0.75
+  showAnswer: Explanation not provided for this entire Practice Test.

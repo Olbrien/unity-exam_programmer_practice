@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 18
+  m_EditorClassIdentifier: 
+  question: "A Programmer needs to implement a third-person camera that can rotate
+    around the player character by moving the mouse. The following code is attached
+    to the camera:\r\n\r\npublic class CameraController : MonoBehaviour {\r\n\r\n  
+    public Transform targetPlayer;\r\n     public float camOffset;\r\n\r\n     Vector3
+    rotationResult;\r\n     Vector3 currentRotation;\r\n     float yaw;\r\n     float
+    pitch;\r\n\r\n     void LateUpdate()\r\n     {\r\n         yaw += Input.GetAxis(\"Mouse
+    X\");\r\n         pitch -= Input.GetAxis(\"Mouse Y\");\r\n         currentRotation
+    = Vector3.SmoothDamp(currentRotation, new Vector3(pitch, yaw), ref rotationResult,
+    0.5f );\r\n         transform.eulerAngles = currentRotation;\r\n         transform.position
+    = targetPlayer.position - transform.forward * camOffset;\r\n     }\r\n }\r\n\r\nThe
+    camera works as intended, except that the camera has no limit on its pitch rotation
+    and can potentially rotate nonstop if the user keeps moving the mouse. \r\n\r\nWhat
+    should the Programmer do to prevent this behavior?"
+  wrongAnswer1: Set a smaller value for camOffset.
+  wrongAnswer2: Put the logic in Update() instead of LateUpdate().
+  wrongAnswer3: Remove the ref keyword in the third parameter of Vector3.SmoothDamp().
+  correctAnswer: In LateUpdate(), use Mathf.Clamp() to limit the value of pitch.
+  showAnswer: 'The Programmer should use Mathf.Clamp() to limit the value of pitch.
+    In the code, the variable pitch represents the X-rotation of the camera (yaw
+    would be the Y-rotation), and currently has no limits, so it can rotate 360 degrees.
+    Mathf.Clamp() can be used clamp the value. For example, pitch = Mathf.Clamp(pitch,
+    min, max); where min and max are the limits for pitch.
+
+
+    The Programmer should
+    not put the logic in Update() instead of LateUpdate(). Generally, code that controls
+    camera movement should be placed in LateUpdate() because it is called after all
+    Update() functions are called. This way, it tracks any logic that may have been
+    changed inside Update(). In this case, using Update() will not solve the issue.
+
+
+    The
+    Programmer should not remove the ref keyword in the third parameter of Vector3.SmoothDamp()
+    because it will not prevent this behavior and it will not compile. The method
+    Vector.SmoothDamp() requires a ref parameter, so you must use a ref argument
+    when calling this method. This kind of parameter indicates that it takes it as
+    a reference, so what we pass to this method is actually a pointer to rotationResult.
+
+
+    The
+    Programmer should not set a smaller value for camOffset. This float variable
+    applies a distance between the player character and the camera. Setting it to
+    a lower value will only make the camera closer to the character, it does not
+    affect the rotation.'

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: 'We are now making a side-scrolling platform game and we want it so that
+
+    when
+    we press the A button, we jump, but we also want it so that if we
+
+    press
+    the up arrow key, we also jump. In the Input Manager, where do we
+
+    add the
+    second button to jump?'
+  wrongAnswer1: Positive Button
+  wrongAnswer2: Negative Button
+  wrongAnswer3: Alt Negative Button
+  correctAnswer: "Alt Positive Button\r"
+  showAnswer: Explanation not provided for this entire Practice Test.

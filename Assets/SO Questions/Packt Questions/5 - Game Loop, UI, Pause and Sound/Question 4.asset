@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: 'Our game has a cutscene and we want it to play the music at a particular
+
+    volume
+    level.
+
+
+    What is the best way of achieving this?'
+  wrongAnswer1: When the cutscene starts, apply a Reverb Zone around the play area.
+  wrongAnswer2: 'When the cutscene starts, change the volume on the Audio Source
+
+    playing
+    the music and attach a script component to cut out high
+
+    frequencies.'
+  wrongAnswer3: 'When the cutscene starts, apply changes to the player''s stored
+    volume
+
+    controls in PlayerPrefs.'
+  correctAnswer: "When the game plays the cutscene, switch to a different Audio Mixer\r\nSnapshot.\r"
+  showAnswer: Explanation not provided for this entire Practice Test.

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 2
+  m_EditorClassIdentifier: 
+  question: "A Programmer uses the following script:\r\n\r\npublic class CameraShake
+    : MonoBehaviour\r\n{\r\n   void Update() \r\n     { \r\n         Camera cam =
+    FindObjectOfType<Camera>(); \r\n         UpdateShake(cam.GetComponent<Transform>());
+    \r\n     } \r\n     void UpdateShake(Transform t) \r\n     { \r\n         //
+    implementation \r\n     } \r\n} \r\n\r\nWhat is the most effective optimization?"
+  wrongAnswer1: Use the non-generic forms of GetComponent() and FindObjectOfType().
+  wrongAnswer2: Move the implementation of UpdateShake() into the body of Update().
+  wrongAnswer3: Replace the call to camera.GetComponent() with camera.transform.
+  correctAnswer: Set a Transform member variable in the inspector instead of calling
+    FindObjectOfType().
+  showAnswer: 'Setting a Transform member variable in the inspector instead of calling
+    FindObjectOfType() is the most effective optimization. FindObjectOfType() is
+    a very inefficient method to find objects because it searches the whole scene
+    for one object of the given type. It should rarely be used, and using it in Update()
+    compounds the problem.
+
+    
+
+    Replacing the call to camera.GetComponent<Transform>()
+    with camera.transform is not the most effective optimization. While this will
+    yield some benefits because GetComponent() is not performant, it is still only
+    a local call because it searches for a component on the object, not the whole
+    scene.
+
+    
+
+    Moving the implementation of UpdateShake() into the body
+    of Update() is not a valid solution. It has no effect on optimization. It is
+    also a bad coding practice to have implementation logic outside of its own methods.
+
+    
+
+    Using
+    non-generic forms of GetComponent() and FindObjectOfType() is not a valid solution.
+    The non-generic forms (passing a string to find something) actually decrease
+    performance because those forms require extra casting and boxing.'

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 18
+  m_EditorClassIdentifier: 
+  question: "A Programmer is developing an Online Role-Playing Game (RPG) using Unity
+    Networking.\r\n\r\nWhen scripting the enemies, the Programmer writes the following
+    NetworkBehaviour to track each unit's current health status:\r\n\r\n[NetworkSettings(channel
+    = 1, sendInterval = 0.2f)]\r\npublic class Health : NetworkBehaviour\r\n{\r\n\r\n    
+    public int health;\r\n\r\n     public void increaseHealth(int hp) \r\n     {
+    \r\n         health += hp; \r\n     }\r\n\r\n     public void loseHp(int hp)
+    \r\n     { \r\n         health -= hp;\r\n         if(health <= 0)\r\n        
+    {\r\n             die();\r\n         }\r\n     } \r\n\r\n     private void die()\r\n    
+    { \r\n         // more game logic \r\n         // broadcast to all other players\r\n    
+    } \r\n} \r\n\r\nWhat should the Programmer do to ensure the integrity of health
+    between the server and all connected clients?"
+  wrongAnswer1: Change the NetworkSettings channel to 0.
+  wrongAnswer2: Decrease the NetworkSettings sendInterval.
+  wrongAnswer3: Add [SyncEvent] attribute to all methods.
+  correctAnswer: Add [SyncVar] attribute to health.
+  showAnswer: 'You should add the [SyncVar] attribute to health to ensure the integrity
+    of health between the server and all connected clients. This attribute ensures
+    that the changes to the player''s health are applied only on the server and work
+    under Server authority. Changes made to a variable marked with the [SyncVar]
+    attribute are then synchronized from the server on all connected clients.
+
+    
+
+    You
+    should not change the NetworkSettings channel to 0 because this does not ensure
+    the integrity of health between the server and its connected clients. The NetworkSettings
+    channel property defines the QoS channel to use for updates for SyncVar variables.
+    Because the default channel is 0, changing the NetworkSettings channel to 0 has
+    no impact.
+
+    
+
+    You should not add the [SyncEvent] attribute to the health
+    variable. This attribute can only be added on events, and health is not an event.
+
+    
+
+    You
+    should not decrease the NetworkSettings sendInterval value. The sendInterval
+    value specifies the delay between updates that are sent for a script. Changing
+    this value has no impact on ensuring the integrity of health between the server
+    and its connected clients.'

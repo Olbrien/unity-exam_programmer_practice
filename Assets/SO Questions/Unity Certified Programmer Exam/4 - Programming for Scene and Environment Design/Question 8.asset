@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 8
+  m_EditorClassIdentifier: 
+  question: 'An endless runner game is implemented using a fixed number of prefabs
+    for each level section. Each time a new section is needed, it is instantiated
+    as a new GameObject, and it is destroyed when it is no longer visible.
+
+    
+
+    A
+    profile of the game reveals that garbage collection is hurting performance.
+
+    
+
+    What
+    technique should be used to resolve this problem?'
+  wrongAnswer1: Decrease the available number of prefabs.
+  wrongAnswer2: Group the level sections under the same parent node in the hierarchy.
+  wrongAnswer3: Add a time delay to the Destroy() function call.
+  correctAnswer: Utilize object pooling instead of instantiation and destruction.
+  showAnswer: 'You should use object pooling instead of instantiation and destruction
+    to resolve this problem. Instantiation and destruction is an expensive operation
+    that requires the garbage collection to perform a lot of work. Object pooling
+    allows the prefabs to be instantiated in batch before they are needed. Because
+    the prefabs activate or deactivate depending on whether they are needed, instantiation
+    and destruction does not occur frequently.
+
+    
+
+    You should not add a
+    time delay to the Destroy() function call to resolve this problem. This does
+    not result in performance improvements because Destroy() is still being called,
+    which is the root of the issue. Additionally, this may cause potential issues
+    due to delay, such as code that depends on the OnDestroy() function.
+
+    
+
+    You
+    should not decrease the available number of prefabs to resolve this problem.
+    Because the number of available prefabs is independent of how often a new section
+    is needed, performance drops still occur if many new sections are needed in quick
+    succession. Additionally, this change has too great an effect on design for the
+    minimal benefit it provides.
+
+    
+
+    You should not group the level sections
+    under the same parent node in the hierarchy to resolve this problem. This yields
+    no performance improvement because the hierarchy order does not affect garbage
+    collection.'

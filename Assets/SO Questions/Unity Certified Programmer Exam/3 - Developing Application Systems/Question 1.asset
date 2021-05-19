@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 1
+  m_EditorClassIdentifier: 
+  question: 'While testing, a Programmer notices a frame drop on older computers,
+    which the Programmer traces back to high texture memory usage. The Programmer
+    must create a menu that will allow the user to choose buttons marked Low, Medium,
+    or High to only change the size of the textures used by the application. These
+    buttons will also have an associated int buttonValue. The Programmer will use
+    the QualitySettings class.
+
+    
+
+    Which script snippet allows the dynamic
+    change of texture resolution based on the user''s platform choice?'
+  wrongAnswer1: QualitySettings.resolutionScalingFixedDPIFactor = buttonValue
+  wrongAnswer2: QualitySettings.SetQualityLevel(buttonValue)
+  wrongAnswer3: QualitySettings.maximumLODLevel = buttonValue
+  correctAnswer: QualitySettings.masterTextureLimit = buttonValue
+  showAnswer: 'You should set QualitySettings.masterTextureLimit = buttonValue to
+    allow the dynamic change of texture resolution. The default value is 0. For each
+    increment of 1, the texture size is divided in half.
+
+    
+
+    You should
+    not set QualitySettings.maximumLODLevel = buttonValue to allow the dynamic change
+    of texture resolution. The maximumLODLevel method is responsible for changing
+    the level of detail on 3D objects.
+
+    
+
+    You should not call QualitySettings.SetQualityLevel(buttonValue)
+    to allow the dynamic change of texture resolution. The SetQualityLevel method
+    changes the entire quality settings, not only the size of the textures.
+
+    
+
+    You
+    should not set QualitySettings.resolutionScalingFixedDPIFactor = buttonValue
+    to allow the dynamic change in texture resolution. The resolutionScalingFixedDPIFactor
+    method is used in conjunction with the target Fixed DPI to define the actual
+    Fixed DPI.'

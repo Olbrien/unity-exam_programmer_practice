@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 4
+  m_EditorClassIdentifier: 
+  question: 'A 3D endless runner game is set along multiple parallel train tracks
+    in a rail yard. The player is always running forward on the tracks, and must
+    avoid oncoming trains by jumping over them or onto an adjacent track.
+
+
+    Trains
+    will move toward the player at varying speeds, or not at all. Occasionally, trains
+    will overlap with each other for a time.
+
+
+    What is the most performant way
+    to prevent trains from overlapping?'
+  wrongAnswer1: When spawning a train on the track, use a BoxCast with a length proportional
+    to the train's speed to ensure that it will not collide with another train until
+    it is behind the camera.
+  wrongAnswer2: When a train is moving, raycast forward from the front of the train,
+    and push any train hit by the raycast forward with the faster train's speed.
+  wrongAnswer3: When spawning a train on the track, add a Rigidbody to it, and then
+    use forces to move trains.
+  correctAnswer: When spawning a train on the track, solve for the spawn position
+    using the speed of the Player, the new train, and the train last placed on that
+    track.
+  showAnswer: 'You should, when spawning a train on the track, solve for the spawn
+    position using the speed of the player, the new train, and the train last placed
+    on that track. Because this requires only simple geometric checks, it affects
+    only one train and not the others already placed. Also, this solution is executed
+    only once, when you spawn the train.
+
+
+    You should not, when a train is moving,
+    raycast forward from the front of the train and push any train hit by the raycast
+    forward with the faster train''s speed. This can result in a cascade effect because
+    increasing another train''s velocity requires making sure that the second train
+    will not overlap with those in front of it, and so on.
+
+
+    You should not,
+    when spawning a train on the track, add a Rigidbody to it, and then use forces
+    to move the trains. Although this prevents the trains from overlapping, it is
+    costlier in terms of performance because it requires the physics engine to guarantee
+    that the trains collide instead of overlapping.
+
+
+    You should not, when spawning
+    a train on the track, use a BoxCast with a length proportional to the train''s
+    speed to ensure that it will not collide with another train until it is behind
+    the camera. A BoxCast is a more expensive version of the raycast that also considers
+    the volume of the train, which is irrelevant in this case. Also, because the
+    BoxCast only tells you whether the trains will overlap, you must rerun it until
+    you determine the appropriate velocity and position for the new train to prevent
+    collision until it is behind the camera.'

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 6
+  m_EditorClassIdentifier: 
+  question: 'In a horror game, the player walks through a dark mine. The only light
+    source is a helmet flashlight on the main character.
+
+
+    What kind of lighting
+    setup should the Programmer use to create the helmet flashlight effect?'
+  wrongAnswer1: A spotlight that follows the position of the main character's eyes.
+  wrongAnswer2: A point light attached as a child to the main character's helmet.
+  wrongAnswer3: A point light with a script that tracks the main character's point
+    of view.
+  correctAnswer: A spotlight attached as a child to the main character's helmet.
+  showAnswer: 'You should use a spotlight attached as a child to the main character''s
+    helmet to create the effect. The spotlight creates a cone of light that expands
+    from its origin to a given direction. By attaching it as a child to the main
+    character''s helmet, the spotlight illuminates the area where the character''s
+    helmet is pointing.
+
+
+    You should not use a point light attached as a child
+    to the main character''s helmet to create the effect. Because the point light
+    illuminates equally in all directions, it would illuminate everything around
+    the character and not only where the helmet is pointing.
+
+
+    You should not
+    use a point light with a script that tracks the main character''s point of view
+    to create the effect. Because the point light illuminates equally in all directions,
+    it would illuminate everything around the character and not only where the helmet
+    is pointing.
+
+
+    You should not use a spotlight that follows the position of
+    the main character''s eyes to create the effect. The helmet emits the light,
+    not the eyes.'

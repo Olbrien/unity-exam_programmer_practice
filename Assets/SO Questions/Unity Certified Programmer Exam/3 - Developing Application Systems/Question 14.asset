@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 14
+  m_EditorClassIdentifier: 
+  question: 'In an adventure game set on an alien planet, the player must exterminate
+    various life forms. The player''s score increases for each kill. The Design Document
+    states that the score must be linked to a player''s account to retrieve later
+    even if the player is on a different play session or a different device.
+
+    
+
+    What
+    is the most reliable method for the Programmer to store the score data?'
+  wrongAnswer1: Use DontDestroyOnLoad() on the GameObject holding the score data
+    and upload data to a server right before the application quits.
+  wrongAnswer2: Use a static value to store the score data so it will be available
+    in the next play session.
+  wrongAnswer3: Save the score into PlayerPrefs every time it gets updated and uploaded
+    to a server right before the application quits.
+  correctAnswer: Use data serialization to persistently store the score data and
+    upload it to a server.
+  showAnswer: "You should use data serialization to persistently store the score
+    data and upload it to a server. Data serialization allows data to be written
+    to a serialized file, which can then be uploaded to the server. Later, this file
+    can be downloaded from the server and de-serialized back to the application on
+    any other platform. \r\n\r\nYou should not use DontDestroyOnLoad() on the GameObject
+    as a method to store data. DontDestroyOnLoad only ensures that the GameObject
+    holding the score data is not destroyed when switching between scenes or loading
+    new scenes. As soon as the application quits, the data is deleted and cannot
+    be retrieved.\r\n\r\nYou should not save the score into PlayerPrefs to store
+    the score data. Data serialization is an easier way to sync the data across multiple
+    devices.\r\n\r\nYou should not a use static value to store the score data because
+    it will not be available in the next play session. Static values are persistent
+    across all classes for a particular session only. The data is lost as soon as
+    the application quits."

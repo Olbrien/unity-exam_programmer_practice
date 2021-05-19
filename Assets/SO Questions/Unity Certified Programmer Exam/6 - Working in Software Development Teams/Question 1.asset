@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 1
+  m_EditorClassIdentifier: 
+  question: 'A producer wants to add a temporary feature to the product for demonstration
+    purposes only. This feature should not exist in the final release and should
+    not interfere with other Programmers working concurrently on other features in
+    the same code base.
+
+    
+
+    Which version control technique should the Programmer
+    use to accomplish this task?'
+  wrongAnswer1: Tag the files in question.
+  wrongAnswer2: Add a comment when checking in the changes.
+  wrongAnswer3: Perform an exclusive check-out on the relevant files.
+  correctAnswer: Create a separate branch for the new feature.
+  showAnswer: 'You should create a separate branch for the new feature to accomplish
+    this task. Branching creates an environment that is separate from the main branch.
+    Because the features may be temporary and should not interfere with other work,
+    branching is the safest and the most reliable way to do this.
+
+    
+
+    You
+    should not tag the files in question to accomplish this task. Tagging only tags
+    a specific point in history to signify its importance. It does not prevent future
+    commits from interfering with the work of other Programmers, nor does it make
+    them temporary.
+
+    
+
+    You should not add a comment when checking in the
+    changes to accomplish this task. Comments are only notes for a commit entry.
+    Although this is a good habit for programming, it does not affect whether the
+    commit will interfere with others.
+
+    
+
+    You should not perform an exclusive
+    check-out on the relevant files to accomplish this task. An exclusive checkout
+    means to exclusively lock files from others so that only the person who checked
+    out the file can make changes.'

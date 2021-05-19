@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91b368abd5b3b74b9ae42fb0874b63a, type: 3}
+  m_Name: Question 11
+  m_EditorClassIdentifier: 
+  question: 'You have moved studios and jumped on a new game project where you are
+
+    in
+    a desert defending a fort from 6,000 donkeys charging to destroy your
+
+    civilization.
+    Your only line of defense is throwing heavy wet bean bags to
+
+    tire the donkeys
+    out. To target each donkey, you use a raycast system that
+
+    makes contact
+    with the mesh collider on either donkey. Your head of
+
+    development has now
+    requested 20,000 donkeys to up the ante. We are
+
+    now starting to notice
+    the performance of the game has drastically
+
+    dropped. Everyone in the team
+    is making an effort so that all 20,000
+
+    donkeys are in the game.
+
+
+    What
+    changes can you make to improve the game''s performance?'
+  wrongAnswer1: 'Make the donkeys slightly bigger so more space is taken up in the
+
+    environment.'
+  wrongAnswer2: 'Create a special donkey layer mask so the rest of the environment
+    is
+
+    ignored.'
+  wrongAnswer3: Shorten your raycast's length.
+  correctAnswer: Replace the mesh colliders with sphere colliders.
+  showAnswer: Explanation not provided for this entire Practice Test.
